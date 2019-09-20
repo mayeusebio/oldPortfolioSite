@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Navbar</title>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="normalize.css" />
+<link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">marielle.</div>
+  <nav>
+    <ul>
+      <li><a href="#aboutPage">About</a></li>
+      <li><a href="#projectsPage">Projects</a></li>
+      <li><a href="#illustrationsPage">Illustration</a></li>
+      <li><a href="#contactPage">Contact</a></li>
+
+    </ul>
+  </nav>
+  <div class="menu-toggle">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+</header>
+
+<h1>hi,<br> i'm<br> marielle<br> eusebio<br></h1>
+<img src='illustrationsForSite/noPhotoYet.png' alt='illustration for homepage' id='homepagePic'>
+
+<div id='aboutPage' class='aboutPage'>
+        <img src='photosForSite/profilePic.png' alt='Photo of me' id='profilePic'>
+    <h2>About</h2>
+    <p>I'm currently a junior electrical engineering student at UC Davis. 
+            I started as a biochemistry student at Napa Valley College where I found interest in biomedical engineering.
+            A semester later I started my engineering pathway at the City College of San Francisco and transferred to the University of California, Davis.
+    </p>
+    <br>
+    <p>In addition to working on engineering related projects, I enjoy drawing and making illustrations both of which can be found here on my website.
+            In my free time I enjoy snowboarding trips to Tahoe, learning web development (my first project being this one!), and yoga.
+    </p>
+</div>
+
+<div class='projectsPage' id='projectsPage'>
+    <h2>Projects</h2>
+    <img src='illustrationsForSite/noPhotoYet.png' class='projectPic'>
+    <p>When projects are completed you'll find them here! For now you get to look at my drawing.</p>
+</div>
+
+<div class='illustrationsPage' id='illustrationsPage'>
+    <h2>Illustrations</h2>
+    <img src='illustrationsForSite/ajokeDrawing.png' alt='Drawing of friend Ajoke'>
+    <h3>My friend Ajoke, Sep 2019</h3>
+    <img src='illustrationsForSite/reneeDrawing.png' alt='Drawing of friend Renee'>
+    <h3>My friend Renee, Sep 2019</h3>
+    <img src='illustrationsForSite/cartoonMayIcon.png' alt='Cartoon of me!'>
+    <h3>A cartoon of me, Sep 2019</h3>
+    <img src='illustrationsForSite/relearningToBike.png' alt='Bike doodle'>
+    <h3>Feelings about biking, Sep 2019</h3>
+</div>
+
+<div class='contactPage' id='contactPage'>
+  <h2>Contact</h2>
+    <div class='buttonsPage'>
+      <a href='https://www.linkedin.com/in/marielle-eusebio-9b7936106'>
+        <button class='reset-Button myButton'>
+          LinkedIn
+        </button>
+      </a>
+
+      <a href='https://www.instagram.com/may.eusebio/'>
+        <button class='reset-Button myButton'>
+            Instagram
+          </button>
+      </a>
+
+      <!-- <a href='mailto:mariellejde@gmail.com' target='_top'>
+        <button class='reset-Button myButton'>
+          Email
+        </button>
+      </a> -->
+
+      <a href='#' name="emailLink" id="emailLink">
+        <button class='reset-Button myButton'>
+          Email
+        </button>
+      </a>
+      
+        
+    </div>
+</div>
+
+
+<footer>
+    <hr>
+    <p>You've made it to the bottom! Website created with HTML, CSS, some JQuery.
+      Github repository for this website can be found by clicking 
+      <a href='https://github.com/mayeusebio/mayeusebio.github.io'>here</a></p></footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(
+    function() {
+      $('.menu-toggle').click(function() {
+        $('nav').toggleClass('active')
+      })
+
+      $('ul li').click(function() {
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+      })
+    }
+  )
+
+  $(function () {
+  $('#emailLink').on('click', function (event) {
+    var email = 'test@theearth.com';
+    var subject = 'Circle Around';
+    var emailBody = 'Some blah';
+    window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+  });
+});
+
+</script>
+
+</body>
+
+</html>
