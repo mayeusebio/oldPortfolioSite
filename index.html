@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Navbar</title>
+<title>Marielle Eusebio's Portfolio</title>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="normalize.css" />
 <link rel="stylesheet" href="styles2.css">
@@ -29,8 +29,14 @@
   </div>
 </header>
 
-<h1>hi,<br> i'm<br> marielle<br> eusebio<br></h1>
-<img src='illustrationsForSite/noPhotoYet.png' alt='illustration for homepage' id='homepagePic'>
+<div class='homePage'>
+  <h1>hi,<br> i'm<br> marielle<br> eusebio<br></h1>
+  <img src='illustrationsForSite/noPhotoYet.png' alt='illustration for homepage' id='homepagePic'>  
+</div>
+
+<button class='reset-Button' id='backToTopBtn'>
+  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+  </button>
 
 <div id='aboutPage' class='aboutPage'>
         <img src='photosForSite/profilePic.png' alt='Photo of me' id='profilePic'>
@@ -104,8 +110,7 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(
-    function() {
+  $(document).ready(function() {
       $('.menu-toggle').click(function() {
         $('nav').toggleClass('active')
       })
@@ -114,6 +119,21 @@
         $(this).siblings().removeClass('active');
         $(this).toggleClass('active');
       })
+
+      var btn = $('#backToTopBtn');
+
+      $(window).scroll(function(){
+        if ($(window).scrollTop() > 300){
+          btn.addClass('show');
+        } else{
+          btn.removeClass('show');
+        }
+      });
+
+      btn.on('click', function(e){
+        e.preventDefault();
+        $('html, body'). animate({scrollTop:0},'300');
+      });
     }
   )
 
