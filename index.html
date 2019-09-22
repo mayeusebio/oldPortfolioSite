@@ -35,7 +35,7 @@
 
 <div class='homePage'>
   <h1>hi,<br> i'm<br> marielle<br> eusebio<br></h1>
-  <img src='illustrationsForSite/homepagePic.png' alt='illustration for homepage' id='homepagePic'>  
+  <img src='illustrationsForSite/homepagePic2.png' alt='illustration for homepage' id='homepagePic'>  
 </div>
 
 <div id='aboutPage' class='aboutPage'>
@@ -122,26 +122,19 @@
 
     var btn = $('#backToTopBtn');
 
-    // $(window).scroll(function(){
-    //   if ($(window).scrollTop() > 300){
-    //     btn.addClass('show');
-    //   } else {
-    //     btn.removeClass('show');
-    //   }
-    // });
-
-    $(window).scroll(function() { 
-      if($(this).scrollTop() != 0) { //not at top
-          $(btn).fadeIn("fast"); 
-      } else { 
-          $(btn).fadeOut("fast");
-      }
+  $(window).scroll(function(){
+    if($(this).scrollTop() <= 0){ // if user is at the top remove button
+      $(btn).fadeOut('fast');
+    } else {
+      $(btn).fadeOut('fast');
       clearTimeout($.data(this, 'scrollTimer'));
       $.data(this, 'scrollTimer', setTimeout(function() {
-        $(btn).fadeOut("slow");
-        console.log("Haven't scrolled in 250ms!");
-      }, 250));
-});
+        if ($(this).scrollTop() != 0){ //only run if not at top
+          $(btn).fadeIn('fast'); // if user stops scrolling show button
+        }
+    }, 270));
+    }
+  });
 
     btn.on('click', function(e){
       e.preventDefault();
