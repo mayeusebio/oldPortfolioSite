@@ -105,7 +105,8 @@ header nav ul li a.active {
 
 h1{
       font-size: 4rem;
-      padding: 5rem 2rem;
+      /* padding: 5rem 2rem; */
+      padding: 5rem 2rem 0 2rem;
       /* border: 2px dashed red; */
       margin: 0;
   }
