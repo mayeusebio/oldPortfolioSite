@@ -13,6 +13,10 @@
 
 <body>
 
+<button class='reset-Button' id='backToTopBtn'>
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+</button>
+
 <header>
   <div class="logo">marielle.</div>
   <nav>
@@ -31,12 +35,8 @@
 
 <div class='homePage'>
   <h1>hi,<br> i'm<br> marielle<br> eusebio<br></h1>
-  <img src='illustrationsForSite/noPhotoYet.png' alt='illustration for homepage' id='homepagePic'>  
+  <img src='illustrationsForSite/homepagePic.png' alt='illustration for homepage' id='homepagePic'>  
 </div>
-
-<button class='reset-Button' id='backToTopBtn'>
-  <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
-  </button>
 
 <div id='aboutPage' class='aboutPage'>
         <img src='photosForSite/profilePic.png' alt='Photo of me' id='profilePic'>
@@ -122,10 +122,12 @@
 
     var btn = $('#backToTopBtn');
 
+    // $(btn).hide();
+
     $(window).scroll(function(){
       if ($(window).scrollTop() > 300){
         btn.addClass('show');
-      } else{
+      } else {
         btn.removeClass('show');
       }
     });
