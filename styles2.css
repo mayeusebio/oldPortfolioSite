@@ -115,6 +115,7 @@ h1{
       width: 100%;
       /* border: 2px dashed red; */
       margin: 0;
+      /* max-width: 650px; */
   }
 
 #backToTopBtn{
@@ -136,6 +137,7 @@ h1{
       display: block;    
       margin: 2rem auto;
       /* border: 2px dashed red; */
+      max-width: 400px;
   }
 
 h2{
@@ -294,4 +296,19 @@ header nav ul li.active ul {
 header nav ul li ul li {
     width: 100%;
 }
+}
+
+@media (min-width: 600px){
+  .homePage{
+    margin-top: 2rem;
+    flex-direction: row;
+  }
+
+  h1{
+    width: 50%;
+  }
+
+  #homepagePic{
+    width: 50%;
+  }
 }
